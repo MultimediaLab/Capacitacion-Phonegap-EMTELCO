@@ -1,0 +1,37 @@
+.servicios b{
+	color: white;
+	text-shadow: 1px 1px 1px black;
+}
+.servicios{
+	-webkit-transition:-webkit-transform 1s;
+	cursor: pointer;
+	width: 140px;
+	height: 90px;
+	border-radius: 70px;
+	padding-top: 50px;
+	margin: 20px auto;
+	list-style: none;
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+	box-shadow: 2px 2px 3px gray;
+}
+.servicios:hover{
+	-webkit-transform: scale(1.2);
+}
+.servicios:nth-child(1){
+	background-image: url(../img/servicio1.png);
+}
+.servicios:nth-child(2){
+	background-image: url(../img/servicio2.jpg);
+}
+.servicios:nth-child(3){
+	background-image: url(../img/servicio3.png);
+}
+#pagina1, #pagina3{
+	background: white;
+}
+#contenido1 img{
+	margin: 30px auto;
+	display: block;
+}

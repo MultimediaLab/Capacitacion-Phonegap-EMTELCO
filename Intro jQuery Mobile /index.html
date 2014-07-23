@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css">
+	<link rel="stylesheet" href="css/emtelco.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<section id="pagina1" data-role="page" data-theme="a">
+		<header data-role="header">
+			<h1>EMTELCO APP</h1>
+		</header>
+		<article id="contenido1" data-role="content">
+			<img src="img/logo.jpg">
+			<label>Usuario :</label>
+			<input type="text" placeholder="Ingresa tu usuario" class="ui-input-text ui-corner-all">
+			<br>
+			<label>Contraseña :</label>
+			<input type="password" placeholder="Ingresa tu contraseña" class="ui-input-text ui-corner-all">
+
+			<a href="#pagina2" data-transition="slide" class="ui-btn ui-btn-a ui-shadow ui-corner-all">Ingresar</a>
+
+		</article>
+	</section>
+	<section id="pagina2" data-role="page">
+		<header data-role="header">
+			<h1>EMTELCO APP</h1>
+			<a href="#pagina1" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-icon-notext ui-shadow ui-icon-delete"></a>
+		</header>
+		<article data-role="content">
+			<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<li data-role="list-divider">Menú Principal</li>
+				<li class="item">
+					<a href="#pagina3" data-transition="slide" class="ui-btn ui-btn-a ui-btn-icon-right ui-icon-carat-r">Servicios</a>
+				</li>
+				<li class="item">
+					<a href="#pagina4" data-transition="slide" class="ui-btn ui-btn-a ui-btn-icon-right ui-icon-carat-r">Galeria</a>
+				</li>
+				<li class="item">
+					<a href="#pagina5" data-transition="slide" class="ui-btn ui-btn-a ui-btn-icon-right ui-icon-carat-r">Contacto</a>
+				</li>
+			</ul>
+		</article>
+	</section>
+	<section id="pagina3" data-role="page">
+		<header data-role="header">
+			<h1>EMTELCO APP</h1>
+			<a href="#pagina1" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-icon-notext ui-shadow ui-icon-delete"></a>
+		</header>
+		<article data-role="content">
+			<ul>
+				<li class="servicios">
+					<b>Servicio 1</b>
+				</li>
+				<li class="servicios">
+					<b>Servicio 2</b>
+				</li>
+				<li class="servicios">
+					<b>Servicio 3</b>
+				</li>
+			</ul>
+		</article>
+	</section>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.3.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
