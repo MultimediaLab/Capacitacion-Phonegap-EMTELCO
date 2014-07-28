@@ -20,12 +20,14 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/vendor/jquery.mobile-1.4.3.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova_plugins.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
         <div data-role="page" id="loggin">
             <div data-role="header">
                 <h1>Sensores APP</h1>
@@ -69,11 +71,18 @@
                 <h1>Sensores APP</h1>
             </div>
             <div data-role="content">
-                <img id="foto" src="img/logo.png">
-                <button id="tomar_foto">Tomar Foto</button>
+                <img id="smallImage" src="">
+                <img id="largeImage" src="">
+
+                <button id="boton_1">Capturar Foto</button><br>
+                <button id="boton_2">Capturar Foto Editable</button><br>
+                <button id="boton_3">Importar Desde Libreria</button><br>
+                <button id="boton_4">Importar Desde Album de Fotos</button>
+                
             </div>
             <div class="footer" data-role="footer">Medellín - Colombia</div>
         </div>
+
 
 
 
@@ -90,15 +99,6 @@
             <div class="footer" data-role="footer">Medellín - Colombia</div>
         </div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/vendor/jquery.mobile-1.4.3.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        
     </body>
 </html>

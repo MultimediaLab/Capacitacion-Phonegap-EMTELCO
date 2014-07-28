@@ -1,14 +1,33 @@
 //$(document).on("mobileinit", appReady);
-$(document).on("ready", appReady);
+//$(document).on("ready", appReady);
+document.addEventListener("deviceready",appReady,false);
 var contrasena;
 var usuario;
 var tamanoPantalla = $(window).width();
+var pictureSource; //Definir la fuente de imagen
+var destinationType; //Definir el formato de imagen que retorna la fuente
 function appReady () {
+	pictureSource=navigator.camera.PictureSourceType;
+   	destinationType=navigator.camera.DestinationType;
+	$('#boton_1').on("click", capturePhoto);
 	$("#ingresar").on("click", validarUsuario);
 	if (tamanoPantalla>480){
 		cambiarListaPantalla1();
 	}
 	$(window).on("resize", cambiarListaPantalla1);
+}
+function capturePhoto () {
+	//BASE 64 Encoded
+	navigator.camera.getPicture(onPhotoSuccess, onFail, { quality: 50,destinationType: destinationType.DATA_URL });
+	alert("foto capturada");
+}
+function onPhotoSuccess (image) {
+	alert("exitoso");
+	$('#smallImage').attr("src", "data:image/jpeg;base64,"+image);
+
+}
+function onFail (message) {
+	alert("Error en : "+message);
 }
 function cambiarListaPantalla1 () {
 	tamanoPantalla = $(window).width();
