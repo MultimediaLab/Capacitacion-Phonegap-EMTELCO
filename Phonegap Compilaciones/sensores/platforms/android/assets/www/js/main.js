@@ -1,5 +1,5 @@
-document.addEventListener("ready",appReady,false);
-//document.addEventListener("deviceready",appReady,false);
+//document.addEventListener("ready",appReady,false);
+document.addEventListener("deviceready",appReady,false);
 var contrasena;
 var usuario;
 var tamanoPantalla = $(window).width();
@@ -18,6 +18,22 @@ function appReady () {
 	}
 	$(window).on("resize", cambiarListaPantalla1);
 }
+$(document).on("pagecreate", "#acelerometro", function() {
+	if (navigator.accelerometer) {
+		alert("Sensor disponible");
+		function successA (acceleration) {
+			$('#accelerometer').html("acelX: "+acceleration.x+"<br>acelY: "+acceleration.y+"<br>acelZ: "+acceleration.z+" <br>");
+		}
+		function failA (error) {
+    		alert(error.message);
+    	}
+    	var options = {frequency: 3000};
+		navigator.accelerometer.watchAcceleration(successA, failA, options);
+	};
+
+
+});
+
 $(document).on("pagecreate", "#gps", function() {
 	var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  
     if (navigator.geolocation) {
@@ -28,6 +44,7 @@ $(document).on("pagecreate", "#gps", function() {
     		drawMap(ubicacion);
     	}
     	function fail (error) {
+    		alert(error.message);
     		drawMap(defaultLatLng);
     	}
     	navigator.geolocation.getCurrentPosition(success, fail);
@@ -37,11 +54,16 @@ $(document).on("pagecreate", "#gps", function() {
     }
     function drawMap(latlng) {
         var myOptions = {
-            zoom: 10,
+            zoom: 18,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        var marker = new google.maps.Marker({
+        	position : latlng,
+        	map: map,
+        	title: "Aqui estamos!!"
+        });
     }
 });
 //CSS #gps, #map-canvas { width: 100%; height: 100%; padding: 0; }
