@@ -19,12 +19,18 @@
 
         <link rel="stylesheet" href="css/main.css">
 
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/vendor/jquery.mobile-1.4.3.min.js"></script>
         <script src="js/plugins.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="cordova_plugins.js"></script>
+
+
+
+
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -57,7 +63,7 @@
             <div data-role="content">
                 <ul id="lista" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
                     <li data-role="list-divider">Sensores Phonegap</li>
-                    <li><a href="#gps" class="ui-icon-right ui-icon-carat-r">GPS</a></li>
+                    <li id="gps"><a href="#gps" class="ui-icon-right ui-icon-carat-r">GPS</a></li>
                     <li><a href="#camara" class="ui-icon-right ui-icon-carat-r">CAMARA</a></li>
                     <li><a href="#acelerometro" class="ui-icon-right ui-icon-carat-r">ACELEROMETRO</a></li>
                 </ul>
@@ -78,6 +84,16 @@
                 <button id="boton_2">Capturar Foto Editable</button><br>
                 <button id="boton_3">Importar Desde Libreria</button><br>
                 <button id="boton_4">Importar Desde Album de Fotos</button>
+                
+            </div>
+            <div class="footer" data-role="footer">Medellín - Colombia</div>
+        </div>
+
+        <div data-role="page" id="gps">
+            <div data-role="header">
+                <h1>Sensores APP</h1>
+            </div>
+           <div role="main" class="ui-content" id="map-canvas">
                 
             </div>
             <div class="footer" data-role="footer">Medellín - Colombia</div>
